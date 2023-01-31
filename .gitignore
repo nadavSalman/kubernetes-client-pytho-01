@@ -1,2 +1,4 @@
 kubeconfig.yaml
 apps-labels.yaml
+input-files/yaml.json
+input-files/Helm_Charts_MZ13.0.0fix.yaml
