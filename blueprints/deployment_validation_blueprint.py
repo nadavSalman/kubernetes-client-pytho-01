@@ -41,12 +41,6 @@ def create_validate_deployment_blueprint(blueprint_name: str, app_context) -> Bl
                 if pod.status.phase != 'Running':
                         app_context.logger.warning(f'The release {extract_microservice_name} Pod {extract_pod_name} not in running state.')
                         scan_data['not_in_running_state'][extract_pod_name] = {'pod_name': extract_pod_name}
-
-                # try:
-                #     pod.status.container_statuses[0].state.running
-                # except AttributeError:
-                #     app_context.logger.warning(f'The release {extract_microservice_name} Pod {extract_pod_name} not in running state.')
-                #     scan_data['not_in_running_state'][extract_pod_name] = {'pod_name': extract_pod_name}
             except KeyError :
                 app_context.logger.info(f'The release {extract_microservice_name}  Pod {extract_pod_name}  not requested by payload test.')
 
